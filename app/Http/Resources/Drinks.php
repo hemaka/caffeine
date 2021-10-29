@@ -14,6 +14,14 @@ class Drinks extends JsonResource
      */
     public function toArray($request)
     {
-        return parent::toArray($request);
+        return [
+            'id' => $this->id,
+            'name' => $this->name,
+            'description' => $this->description,
+            'user_id' => $this->user_id,
+            'caffeine' => $this->caffeine,
+            'unit' => $this->unit,
+            'created_at' => $this->created_at->format('m-d H:i'),
+        ];
     }
 }

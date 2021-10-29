@@ -7,6 +7,7 @@ use Laravel\Socialite\Facades\Socialite;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 class AuthController extends Controller
 {
@@ -14,7 +15,6 @@ class AuthController extends Controller
         try {
             $googleUser = Socialite::driver('google')->user();    
         } catch (\Laravel\Socialite\Two\InvalidStateException $e) {
-            dd($e);
             return view('welcome', ['msg'=>'login error']);
         }
         try {
