@@ -71,7 +71,7 @@
         <div class="card-body">
             <h5 class="card-title">
               {{item.name}}
-              <button class="btn btn-sm btn-info float-end" v-if="item.user_id == user.id" @click="sel(item)">Select</button>
+              <button class="btn btn-sm btn-info float-end" @click="sel(item)">Select</button>
             </h5>
             
             <div class="row" v-if="item.unit.type == 'serving' && item.unit.pack == 'can'">
